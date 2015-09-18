@@ -37,3 +37,23 @@ Lastly, test the new image:
 ```
 docker run --rm -i -t --name=netsniff_rx --privileged --cap-add all --net=host -v /tmp:/tmp greenpau/netsniff-ng netsniff-ng --in eth0 -l
 ```
+
+Additionally, a user could test netsniff-ng tools by running the below command.
+The command prints the version of each of the tools in the netsniff-ng suite.
+
+```
+make test
+```
+
+It invokes the following commands:
+
+```
+docker run --rm --read-only greenpau/netsniff-ng netsniff-ng --version
+docker run --rm --read-only greenpau/netsniff-ng astraceroute --version
+docker run --rm --read-only greenpau/netsniff-ng bpfc --version
+docker run --rm --read-only greenpau/netsniff-ng curvetun --version
+docker run --rm --read-only greenpau/netsniff-ng flowtop --version
+docker run --rm --read-only greenpau/netsniff-ng ifpps --version
+docker run --rm --read-only greenpau/netsniff-ng mausezahn --version
+docker run --rm --read-only greenpau/netsniff-ng trafgen --version
+```
