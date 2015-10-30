@@ -1,3 +1,9 @@
+#
+# Build:   sudo docker build --force-rm=true -t greenpau/netsniff-ng - < Dockerfile
+# Run:     sudo docker run --rm -i -t --name=netsniff-ng --privileged --cap-add all --net=host -v /tmp:/tmp greenpau/netsniff-ng /bin/bash
+# Capture: netsniff-ng --in eth1 --magic 0xa1e2cb12 -n 10 -f "net 224.0.0.0/4" -q
+#
+
 FROM centos:latest
 
 MAINTAINER Paul Greenberg @greenpau
